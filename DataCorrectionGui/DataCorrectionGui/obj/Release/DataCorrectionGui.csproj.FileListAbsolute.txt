@@ -1,0 +1,17 @@
+C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\bin\Release\DataCorrectionGui.exe.config
+C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\bin\Release\DataCorrectionGui.exe
+C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\bin\Release\DataCorrectionGui.pdb
+C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.Form1.resources
+C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.Properties.Resources.resources
+C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.csproj.GenerateResource.Cache
+C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.exe
+C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.pdb
+C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\bin\Release\DataCorrectionGui.exe.config
+C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.exe
+C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.pdb
+C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\bin\Release\DataCorrectionGui.exe
+C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\bin\Release\DataCorrectionGui.pdb
+C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.csprojResolveAssemblyReference.cache
+C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.Form1.resources
+C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.Properties.Resources.resources
+C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.csproj.GenerateResource.Cache

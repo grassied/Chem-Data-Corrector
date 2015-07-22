@@ -22,40 +22,41 @@ namespace DataCorrectionGui
         OpenFileDialog oFile = new OpenFileDialog();                //open file
         SaveFileDialog sFile = new SaveFileDialog();                //saving file
 
-        double startRange = 0;
-        double endRange = 0;
-        double average = 0;
-        double number = 0;
-
-        int startKey = 0;
-        int endKey = 0;
-
-        string[] incorrectData;
-        string[] correctData = new string[] {};
-        List<string> correctDataList = new List<string>() { };
-        List<double> wavelengths = new List<double>(){  };
-        List<double> absorbances = new List<double>() { };
+        double startRange = 0;                                      //Start Range
+        double endRange = 0;                                        //End Range
+        double average = 0;                                         //Average of absorbances
+        double number = 0;                                          //Number of values in range
+        int startKey = 0;                                           //Starting key (index) of range
+        int endKey = 0;                                             //Ending key (index) of range
+        bool open = false;                                          //Is open file valid?
+        bool save = false;                                          //Is save file valid?
 
 
-        private void Form1_Load(object sender, EventArgs e)         //form thing?
+        //Function for Form
+        private void Form1_Load(object sender, EventArgs e)        
 
         {
             
 
         }
-
-        private void button1_Click(object sender, EventArgs e)          //open file button
+        //open file button
+        private void button1_Click(object sender, EventArgs e)         
         {
-            oFile.Filter = "Text Files|*.txt";
-            if(oFile.ShowDialog() == DialogResult.OK)
+            oFile.Filter = "Text Files|*.txt|IFX Files|*.IFX";
+            if (oFile.ShowDialog() == DialogResult.OK)
             {
                 
                 openFileName.Text = oFile.FileName;
-                incorrectData = File.ReadAllLines(oFile.FileName);
+                open = true;
+            }
+            else
+            {
+                open = false; 
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)          //save as button
+        //save as button
+        private void button2_Click(object sender, EventArgs e)          
         {
             sFile.Filter = "Text Files|*.txt";
             
@@ -63,98 +64,228 @@ namespace DataCorrectionGui
             {
                 sFile.InitialDirectory = oFile.InitialDirectory;
                 saveFileName.Text = sFile.FileName;
+                save = true;
+            }
+            else
+            {
+                save = false;
+            }
+        }
+        //save file location Text box
+        private void textBox2_TextChanged(object sender, EventArgs e)   
+        {
+
+        }
+        //wavelength range label
+        private void label1_Click(object sender, EventArgs e)           
+        {
+
+        }
+        //start text box key presses (not used)
+        private void startText_KeyDown(object sender, KeyEventArgs e)  
+        {
+            
+
+          
+
+        }
+        //start range text box
+        private void textBox3_TextChanged(object sender, EventArgs e)  
+        {
+            
+            
+           
+
+        }
+        //open file location Text box
+        private void openFileName_TextChanged(object sender, EventArgs e)     
+        {
+
+        }
+        //end range text box
+        private void endText_TextChanged(object sender, EventArgs e)       
+        {
+          
+        }
+        //Start Button Function
+        private void START_Click(object sender, EventArgs e)           
+        {
+
+
+            string[] correctData = new string[] { };                    //String array of corrected data    
+            List<string> correctDataList = new List<string>() { };      //List of corrected data
+            List<double> wavelengths = new List<double>() { };          //List of wavelengths
+            List<double> absorbances = new List<double>() { };          //List of absorbances
+            string[] incorrectData = new string[] { };                  //String array of original data
+            string[] splitString = new string[] { };                    //String array to seperate each line by comma
+            string temp = "";                                           //Temporary string 
+            int count = 0;                                              //Start of data entries (after header)
+            double garbage = 0;                                         //Garbage double variable to test for header lines
+            bool startValid = false;                                    //if start is valid
+            bool endValid = false;                                      //if end is valid
+          
+
+            //Makes sure files have been selected/opened
+
+            if (open && save)
+            {
+
+                incorrectData = File.ReadAllLines(oFile.FileName);
+
+                for (int i = 0; i < incorrectData.Length; i++)
+                {
+                    try
+                    {
+                        garbage = Convert.ToDouble(incorrectData.ElementAt(i). Substring(0, 1));
+                    }
+                    catch (Exception)
+                    {
+
+                        count++;
+                    }
+
+                }
+
+                //Converts string lines into 2 lists of doubles
+                for (int i = count; i < incorrectData.Length; i++)
+                {
+                    temp = incorrectData.ElementAt(i);
+
+                    splitString = temp.Split(',');
+
+                    wavelengths.Add(Convert.ToDouble(splitString.ElementAt(0)));        
+                    absorbances.Add(Convert.ToDouble(splitString.ElementAt(1)));
+                    
+                    Array.Clear(splitString, 0, splitString.Length);
+                }
+
+                // Tries to convert start range to double (catches exceptions to prevent crash)
+                try
+                {
+                    startRange = double.Parse(startText.Text, System.Globalization.CultureInfo.InvariantCulture);  //string to double
+                    startValid = true;
+
+                }
+                catch (Exception)
+                {
+
+                    DialogResult error = MessageBox.Show("Start Range is not valid", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    startValid = false;
+                }
+                // Tries to convert end range to double (catches exceptions to prevent crash)
+
+                try
+                {
+
+                    endRange = double.Parse(endText.Text, System.Globalization.CultureInfo.InvariantCulture);  //string to double
+                    endValid = true;
+
+                }
+                catch (Exception)
+                {
+
+                    DialogResult error = MessageBox.Show("End Range is not valid", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    endValid = false;
+                }
+                //Checks for negative start range
+               if(startRange < 0)
+                {
+
+                    DialogResult error = MessageBox.Show("Start Range can't be negative", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    startValid = false;
+                }
+                //Checks to make sure start is not larger than end            
+                if (startRange > endRange)
+                {
+
+                    DialogResult error = MessageBox.Show("Start Range should be LESS than End Range", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    startValid = false;
+
+                }
+                //Checks to make sure start and end are in range 
+              else  if (startRange < (wavelengths.ElementAt(0)) || (endRange > wavelengths.Max()))
+                {
+                    DialogResult error = MessageBox.Show("Values are not in range \n Range is: " + wavelengths.ElementAt(0) + " to " + wavelengths.Max(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    startValid = false;
+                    endValid = false;
+                }
+
+
             }
 
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)   //save file location
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)           //wavelength range label
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)   //start range text box
-        {
-            startRange = double.Parse(startText.Text, System.Globalization.CultureInfo.InvariantCulture);  //string to double
-            
-        }
-
-        private void openFileName_TextChanged(object sender, EventArgs e)     //display open file name
-        {
-
-        }
-
-        private void endText_TextChanged(object sender, EventArgs e)       //end range text box
-        {
-            endRange = double.Parse(endText.Text, System.Globalization.CultureInfo.InvariantCulture);  //string to double
-        }
-
-        private void START_Click(object sender, EventArgs e)            //start button
-        {
-
-
-            //Converts string lines into 2 lists of doubles
-            for (int i = 2; i < incorrectData.Length; i++)
+            else
             {
+
+                DialogResult error = MessageBox.Show("Make sure Valid files have been selected", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
+         if (startValid && endValid)
+            {
+
                
 
-                wavelengths.Add(Convert.ToDouble(incorrectData.ElementAt(i).Substring(0, 5)));  //absorbs
-                  absorbances.Add(Convert.ToDouble(incorrectData.ElementAt(i).Substring(6, 7)));   //waves
-
-            }
-            
-            //Seaches for starting range and ending range in Wavelength List
-            for (int i = 0; i < wavelengths.Count; i++)
-            {
-                if (wavelengths.ElementAt(i) == startRange)
+                //Seaches for starting range and ending range in Wavelength List
+                for (int i = 0; i < wavelengths.Count; i++)
                 {
-                    startKey = i;
+                    if (wavelengths.ElementAt(i) == startRange)
+                    {
+                        startKey = i;
+                    }
+
+                    if (wavelengths.ElementAt(i) == endRange)
+                    {
+                        endKey = i;
+                    }
+
                 }
 
-                if (wavelengths.ElementAt(i) == endRange)
+                //Sums absorbances from range 
+                for (int i = startKey; i <= endKey; i++)
                 {
-                    endKey = i;
+                    average += absorbances.ElementAt(i);
+
                 }
 
+                //Calculates average
+                number = (endRange - startRange) + 1;
+                average = average / number;
+
+                //Subtracts average from abosrbances
+
+                for (int i = 0; i < absorbances.Count; i++)
+                {
+                    absorbances[i] = absorbances.ElementAt(i) - average;
+                }
+
+                //Merges Lists back into a single string array for printing
+                for (int i = 0; i < wavelengths.Count; i++)
+                {
+                    string wave = Math.Round(wavelengths.ElementAt(i), 10).ToString();
+                    string abs = Math.Round(absorbances.ElementAt(i), 10).ToString();
+
+
+                    correctDataList.Add(wave + "," + abs);
+                    //correctData[i] = wave + "," + abs;
+
+                }
+            //Write data to save file
+                correctData = correctDataList.ToArray();
+                File.WriteAllLines(sFile.FileName, correctData);
+                DialogResult result = MessageBox.Show("Data Has Been Corrected", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             //reset all variables 
+                count = 0;
+                Array.Clear(correctData, 0, correctData.Length);
+                wavelengths.Clear();
+                absorbances.Clear();
+                correctDataList.Clear();
+                Array.Clear(correctData, 0, correctData.Length);
+                Array.Clear(incorrectData, 0, incorrectData.Length);
+                average = 0;
+                
             }
 
-            //Sums absorbances from range 
-            for (int i = startKey; i <= endKey; i++)
-            {
-                average += absorbances.ElementAt(i);
-
-            }
-
-            //Calculates average
-            number = (endRange - startRange) + 1;
-            average = average / number;
-            
-            //Subtracts average from abosrbances
-    
-            for (int i = 0; i < absorbances.Count; i++)
-            {
-                absorbances[i] = absorbances.ElementAt(i) - average;
-            }
-
-            //Merges Lists back into a single string array for printing
-            for (int i = 0; i < wavelengths.Count; i++)
-            {
-                string wave = Math.Round(wavelengths.ElementAt(i), 1).ToString();
-                string abs = Math.Round(absorbances.ElementAt(i), 5).ToString();
-
-
-                correctDataList.Add(wave + "," + abs);
-                //correctData[i] = wave + "," + abs;
-
-            }
-
-            correctData = correctDataList.ToArray();
-            File.WriteAllLines(sFile.FileName, correctData);
-            DialogResult result =  MessageBox.Show("Data Has Been Corrected", "Success!", MessageBoxButtons.OK);
         }
     }
 }

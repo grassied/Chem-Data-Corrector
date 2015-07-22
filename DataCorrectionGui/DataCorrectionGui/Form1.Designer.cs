@@ -36,9 +36,9 @@
             this.WavlengthRangeLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.startText = new System.Windows.Forms.TextBox();
-            this.endText = new System.Windows.Forms.TextBox();
             this.START = new System.Windows.Forms.Button();
+            this.endText = new System.Windows.Forms.TextBox();
+            this.startText = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // openFileName
@@ -113,22 +113,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "End";
             // 
-            // startText
-            // 
-            this.startText.Location = new System.Drawing.Point(136, 213);
-            this.startText.Name = "startText";
-            this.startText.Size = new System.Drawing.Size(63, 20);
-            this.startText.TabIndex = 7;
-            this.startText.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // endText
-            // 
-            this.endText.Location = new System.Drawing.Point(136, 245);
-            this.endText.Name = "endText";
-            this.endText.Size = new System.Drawing.Size(63, 20);
-            this.endText.TabIndex = 8;
-            this.endText.TextChanged += new System.EventHandler(this.endText_TextChanged);
-            // 
             // START
             // 
             this.START.BackColor = System.Drawing.Color.LightGreen;
@@ -143,6 +127,23 @@
             this.START.Text = "START";
             this.START.UseVisualStyleBackColor = false;
             this.START.Click += new System.EventHandler(this.START_Click);
+            // 
+            // endText
+            // 
+            this.endText.Location = new System.Drawing.Point(136, 245);
+            this.endText.Name = "endText";
+            this.endText.Size = new System.Drawing.Size(63, 20);
+            this.endText.TabIndex = 8;
+            this.endText.TextChanged += new System.EventHandler(this.endText_TextChanged);
+            // 
+            // startText
+            // 
+            this.startText.Location = new System.Drawing.Point(136, 213);
+            this.startText.Name = "startText";
+            this.startText.Size = new System.Drawing.Size(63, 20);
+            this.startText.TabIndex = 7;
+            this.startText.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.startText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.startText_KeyDown);
             // 
             // Form1
             // 
@@ -181,9 +182,9 @@
         private System.Windows.Forms.Label WavlengthRangeLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox startText;
-        private System.Windows.Forms.TextBox endText;
         private System.Windows.Forms.Button START;
+        private System.Windows.Forms.TextBox endText;
+        private System.Windows.Forms.TextBox startText;
     }
 }
 
