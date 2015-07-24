@@ -6,6 +6,4 @@ C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCor
 C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.csproj.GenerateResource.Cache
 C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.exe
 C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.pdb
-C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\bin\Debug\DataCorrectionGui.exe.config
-C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.exe
-C:\Users\Gianpaolo\Desktop\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.pdb
+C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.csprojResolveAssemblyReference.cache
