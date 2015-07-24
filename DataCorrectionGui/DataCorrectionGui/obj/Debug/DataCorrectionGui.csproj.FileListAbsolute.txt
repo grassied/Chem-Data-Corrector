@@ -7,3 +7,6 @@ C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCor
 C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.exe
 C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.pdb
 C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.csprojResolveAssemblyReference.cache
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\bin\Debug\DataCorrectionGui.exe.config
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.exe
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Debug\DataCorrectionGui.pdb

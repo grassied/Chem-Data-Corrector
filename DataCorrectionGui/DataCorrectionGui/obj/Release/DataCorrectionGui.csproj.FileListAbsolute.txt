@@ -6,3 +6,12 @@ C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Release\DataC
 C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.csproj.GenerateResource.Cache
 C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.exe
 C:\Users\Gianpaolo\Desktop\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.pdb
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\bin\Release\DataCorrectionGui.exe.config
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.exe
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.pdb
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\bin\Release\DataCorrectionGui.exe
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\bin\Release\DataCorrectionGui.pdb
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.csprojResolveAssemblyReference.cache
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.Form1.resources
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.Properties.Resources.resources
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\DataCorrectionGui\DataCorrectionGui\obj\Release\DataCorrectionGui.csproj.GenerateResource.Cache
