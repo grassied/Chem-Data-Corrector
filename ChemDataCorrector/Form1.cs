@@ -290,7 +290,7 @@ namespace ChemDataCorrector
                         double mSlope = ds.Slope;              
                         double bIntercept = ds.YIntercept;    
 
-                        //Calculates new absorbances for each wavelength using linear fit
+                        //Calculates new absorbances for each wavelength using linear fit (log10(absorbance)=m*log10(wavelength)+b)
                         List<double> scatterLine = new List<double> { };
                         for (int i = 0; i < wavelengths.Count; i++)
                         {
