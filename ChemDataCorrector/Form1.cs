@@ -302,7 +302,6 @@ namespace ChemDataCorrector
                         {
                             absorbances[i] = absorbances.ElementAt(i) - scatterLine.ElementAt(i);
                         }
-
                     //Adjusts starting region back to 0
                         //Sums absorbances from range 
                         for (int i = startKey; i <= endKey; i++)
