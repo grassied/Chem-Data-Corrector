@@ -1,0 +1,10 @@
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\ChemDataCorrector\bin\Release\ChemDataCorrector.exe.config
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\ChemDataCorrector\bin\Release\ChemDataCorrector.exe
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\ChemDataCorrector\bin\Release\ChemDataCorrector.pdb
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\ChemDataCorrector\bin\Release\CommonLib.dll
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\ChemDataCorrector\obj\Release\ChemDataCorrector.csprojResolveAssemblyReference.cache
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\ChemDataCorrector\obj\Release\ChemDataCorrector.Form1.resources
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\ChemDataCorrector\obj\Release\ChemDataCorrector.Properties.Resources.resources
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\ChemDataCorrector\obj\Release\ChemDataCorrector.csproj.GenerateResource.Cache
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\ChemDataCorrector\obj\Release\ChemDataCorrector.exe
+C:\Users\Dylan\Documents\GitHub\Chem-Data-Corrector\ChemDataCorrector\obj\Release\ChemDataCorrector.pdb
