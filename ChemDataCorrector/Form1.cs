@@ -278,17 +278,52 @@ namespace ChemDataCorrector
                     {
                         List<double> xWaveLog = new List<double>() { };
                         List<double> yAbsLog = new List<double>() { };
+                        double sDy = 0;
+                        double sDx = 0;
+                        int N = 0;
+                        double sumXY = 0;
+                        double sumX = 0;
+                        double sumY = 0;
+                        double sumXsqr = 0;
+                        double sumYsqr = 0;
+                        double rho = 0;
+                        double yAvrg = 0;
+                        double xAvrg = 0;
+                        double mSlope = 0;
+                        double bIntercept = 0;
+
+
                         for (int i = startKey; i <= endKey; i++)
                         {
                             xWaveLog.Add(Math.Log10(wavelengths.ElementAt(i))); //Converts wavelengths to log10
                             yAbsLog.Add(Math.Log10(absorbances.ElementAt(i)));  //Converts absorbances to log10
                         }
 
-                        //Calculates slope and y intercept of linear fit
+                      //Calculates slope and y intercept of linear fit
+                        xAvrg = xWaveLog.Average();
+                        yAvrg = yAbsLog.Average();
+                        N = xWaveLog.Count();
+                        for (int i = 0; i < N; i++)
+                        {
+                            sDx += Math.Pow(xWaveLog.ElementAt(i) - xAvrg, 2);
+                            sDy += Math.Pow(yAbsLog.ElementAt(i) - yAvrg, 2);
+
+                            //calculates parts of rho
+                            sumXY += xWaveLog.ElementAt(i) * yAbsLog.ElementAt(i);
+                            sumX += xWaveLog.ElementAt(i);
+                            sumY += yAbsLog.ElementAt(i);
+                            sumXsqr += Math.Pow(xWaveLog.ElementAt(i), 2);
+                            sumYsqr += Math.Pow(yAbsLog.ElementAt(i), 2);
+                        }
                         
-                        var ds = new CommonLib.Numerical.XYDataSet(xWaveLog, yAbsLog);
-                        double mSlope = ds.Slope;              
-                        double bIntercept = ds.YIntercept;    
+                        //calculates parts of slope
+                        sDx = Math.Sqrt(sDx / N);
+                        sDy = Math.Sqrt(sDy / N);
+                        rho = (N*sumXY - (sumX*sumY))/Math.Sqrt((N*sumXsqr - Math.Pow(sumX, 2))*(N*sumYsqr - Math.Pow(sumY, 2)));
+
+                        //final calculations for slope and intercept
+                        mSlope = rho * (sDy / sDx);
+                        bIntercept = yAvrg - (mSlope * xAvrg);
 
                         //Calculates new absorbances for each wavelength using linear fit (log10(absorbance)=m*log10(wavelength)+b)
                         List<double> scatterLine = new List<double> { };
@@ -342,7 +377,6 @@ namespace ChemDataCorrector
                             absorbances[i] = absorbances.ElementAt(i) - average;
                         }
                     }
-                    ///////////////////////////////////////////////////////////////////////////////////////
                     //Merges Lists back into a single string array for printing
                     for (int i = 0; i < wavelengths.Count; i++)
                     {
